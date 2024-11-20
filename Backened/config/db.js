@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const connectDB=async()=>{
-    await mongoose.connect('mongodb+srv://greatstack:9044288589@cluster0.6xrqi.mongodb.net/hungersite').then(()=>console.log("DB Connected"));
+    await mongoose.connect(process.env.MONGO).then(()=>console.log("DB Connected"));
 }
-
+ 
